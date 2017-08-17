@@ -1,0 +1,62 @@
+Middleman (no static databse, databse is generated at that moment for you)
+
+Middleman is framework that allows you to reuse code to avoid repetition in stylesheets
+
+Benefits:
+easy to program
+free
+access to gems and partials
+
+1) Install middleman
+gem install middleman
+
+2) To run: type in terminal middleman s (middleman serve)
+website: localhost:4567
+
+3) parsed as an array with hashes (migrate content from HTML)
+
+4) layout.erb
+<body>
+<%=yield %>
+</body>
+Every page has similar content; comes from html file; all of the data gets parsed
+Using layout as a template
+
+5)middleman deploy (make sure clean before pushing)
+<%= partial "layouts/navbar" %>
+partials generate parts of the page (like a navbar)
+
+6) Use ERB templates (Embedded RuBy) combines ruby and html to generate html
+web pages (generates static html)
+- mix html and logic
+
+7) how to create a partial: _ + name + .html (ex. _card.html)
+
+<% %w(berlin shangai paris tokyo rio). each do |city| %>
+%w creates an array of strings
+
+ERB helpers
+-help us generate images and links
+
+1) don't want to use <a href anmore />
+use link_to
+
+2) erb snippets
+
+SCSS
+erb --> html
+scss --> css
+
+1) Can define graphic variables (i.e. a color)
+2) nest classes
+
+    .banner {
+      background: red;
+      h1 {
+      font-size: 50px;
+      }
+    }
+
+3) Files
+  - index.scss: catalogue of all components (overview)
+  - bootstrap_variables.scss: override bootstrap default properties and sent variables
